@@ -1,0 +1,25 @@
+<div class="row" style="background-color:lightcyan;">
+  <div class="col-xs-6"></div>
+  <div class="col-xs-6">
+
+    <button class="button btn-info" *ngIf='showFile'
+    (click)='showFiles(false)'>Hide Files</button>
+    
+    <button class="button btn-info" *ngIf='!showFile'
+    (click)='showFiles(true)'>Show Files</button>
+    
+    <button class="button btn-info"  (click)='welcomeToAvengerWorld()'>Avenger World</button>
+    
+    <div [hidden]="!showFile">
+    <div class="panel panel-primary">
+      <div class="panel-heading">List of Files</div>
+      <div *ngFor="let file of fileUploads | async">
+        <div class="panel-body">
+          <detail-upload-component [fileUpload]='file'></detail-upload-component>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+

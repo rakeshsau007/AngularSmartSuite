@@ -1,0 +1,44 @@
+<!-- <p>
+  upload-file-component works!
+</p> -->
+<!-- <div class="row">
+  <div class="col-md-4">
+    <h1>HI welcome to Kroger</h1>
+  
+</div> -->
+
+<!-- <div class="col-xs-6 hide">
+      <h3>Basic with Auto</h3>
+      <p-fileUpload #fubauto mode="basic" name="demo[]" url="./upload.php" accept="image/*" 
+        maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)" auto="true" chooseLabel="Browse">
+      </p-fileUpload>
+    </div> -->
+
+<div class="row" style="background-color:lightcyan;">
+  <div class="col-xs-6"></div>
+   
+  
+
+    <div class="col-xs-6">
+        <h3>Basic with Auto</h3>
+        <div *ngIf="currentFileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+            aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:progress.percentage+'%'}">
+            {{progress.percentage}}%</div>
+        </div>
+         
+        <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)">
+        </label>
+         
+        <button class="btn btn-success" [disabled]="!selectedFiles"
+          (click)="upload()">Upload</button>
+    </div>
+   
+</div>
+
+
+
+
